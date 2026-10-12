@@ -33,7 +33,7 @@ const SITE = {
   role: "Mechanical Engineering @ Ohio State",
   focus: "Robotics · Autonomy · Mechatronics",
   intro:
-    "I build things that move. Right now that's a scratch-built autonomous quadcopter, a Baja SAE chassis, and anything with a motor and a microcontroller I can get my hands on. Looking for Summer 2027 internships in robotics, autonomy, and aerospace.",
+        "Mechanical engineering student at Ohio State working on drones, robotics, and autonomous systems. I like building things end to end, from CAD and fabrication to wiring and code. Looking for Summer 2027 internships in robotics, autonomy, and aerospace.",
   facts: ["B.S. Mechanical Engineering, May 2029", "Minor: Robotics & Autonomous Systems", "U.S. Citizen", "Columbus, OH · Ashburn, VA"],
   email: "dhanushkundur@gmail.com",
   github: "https://github.com/dhanushkundur",
