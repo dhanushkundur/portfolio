@@ -74,7 +74,7 @@ const SKILLS = [
   { group: "CAD & Analysis", items: ["SolidWorks", "Onshape", "Fusion 360", "ANSYS (FEA)", "GD&T fundamentals", "Engineering drawings"] },
   { group: "Manufacturing & Test", items: ["FDM 3D printing (PETG/PLA)", "Tube notching", "Fixturing", "Welding", "Soldering", "Bench & flight testing"] },
   { group: "Electronics & Embedded", items: ["Arduino", "ArduPilot", "PX4", "Mission Planner", "I2C", "PWM", "Oscilloscope", "Multimeter"] },
-  { group: "Programming", items: ["Python", "pymavlink", "OpenCV", "C++ (Arduino)", "MATLAB", "Java", "Git/GitHub", "Linux"] },
+  { group: "Programming", items: ["Python", "pymavlink", "OpenCV", "C++ (Arduino)", "TypeScript", "React", "Three.js", "MATLAB", "Java", "Git/GitHub", "Linux"] },
 ];
 
 /* ===================== PROJECTS (shown in this order) ===================== */
@@ -148,6 +148,75 @@ const PROJECTS = [
       { src: "img/atlas/top-lit.jpg", caption: "Top view with carbon-fiber arms" },
       { src: "img/atlas/early-build.jpg", caption: "Earlier version of the build" },
       // Add a flight photo or CAD screenshot here when you have one
+    ],
+  },
+
+  /* ------------------------------------------------------------------ */
+  {
+    id: "neighbor",
+    title: "Neighbor",
+    subtitle: "HackOhio 2026 · Data center impact learning app",
+    tagline: "A web app where you drop a data center onto a 3D model of a real town and see what it does to water, power bills, schools, noise, and land.",
+    status: "Live · HackOhio 2026",
+    dates: "Oct 2026",
+    role: "Team · 3D frontend and lessons",
+    tags: ["Three.js", "React Three Fiber", "Next.js", "TypeScript", "Overture Maps", "GLSL"],
+    cover: "img/neighbor/cover.jpg",
+    video: "",
+    links: [
+      { label: "Try it live", url: "https://neighbor-rho.vercel.app/" },
+      { label: "Code on GitHub", url: "https://github.com/Akshit-Jalli/DCSimHackOhio" },
+    ],
+    stats: [
+      { value: "Any", label: "US town, built from real map data" },
+      { value: "1:1", label: "real building footprints" },
+      { value: "15 yr", label: "simulated (2026 to 2041)" },
+      { value: "4", label: "grade levels of lessons" },
+    ],
+    sections: [
+      {
+        heading: "Overview",
+        text: [
+          "Data centers are getting built in small towns all over Ohio, and most people only hear about them as a headline. We wanted something where you can actually see one land in a real town and watch what changes over the next 15 years.",
+          "My team split it up: teammates worked on the simulation and data, and I built the 3D town, the drag-and-drop placement, and the K-12 lesson side of the app. The demo town is Wilmington, Ohio, but you can type in any US town.",
+        ],
+      },
+      {
+        heading: "Building the 3D town",
+        text: [
+          "The town is built from Overture Maps data: every building, road, patch of forest and farmland, and body of water. Footprints are true to scale (1 unit = 1 meter); only building heights are stretched 3x so the town reads better from above. When you type a new town, the app geocodes it, downloads that area, and caches it, so the first load takes around 15 seconds and after that it's instant.",
+          "I rendered it with Three.js through React Three Fiber. The map has thousands of trees and buildings, so I used instanced meshes (one draw call for all the trees) and merged the buildings into one mesh. I edited the shaders to tint buildings red inside the noise zone and light up windows at night.",
+        ],
+      },
+      {
+        heading: "Placing a data center",
+        text: [
+          "You pick a size (enterprise, hyperscale, or AI campus), drag it onto the map, and it snaps to 20-acre tiles. It won't let you build on water or on top of downtown. The campus builds out in phases with cranes and steel frames, then a dashed line shows the new power line it would need to the nearest substation.",
+          "The side panels show the impacts year by year: electricity, water use, school funding, noise at the nearest house, and jobs, each with a low to high range instead of one fake-precise number.",
+        ],
+      },
+      {
+        heading: "Lessons for K-12",
+        text: [
+          "We turned it into a learning tool. Students pick their grade and a guide character, then go through short modules where they predict an answer before the map shows them the real one. The same lesson is written four ways for K-2, 3-5, 6-8, and 9-12.",
+          "Every fact in the lessons is cited to a real source (EIA, Lawrence Berkeley National Lab, USGS, CDC), and any number that comes from our rough model is labeled as an estimate. Nothing a student types leaves their browser.",
+        ],
+      },
+      {
+        heading: "Problems I had to fix",
+        list: [
+          "My first map data source (Overpass) kept timing out, so I switched to Overture Maps, which made loading any town possible.",
+          "The first version had about 80,000 trees and ran badly. I spread them out to about 11,500 and it still looks like a forest.",
+          "The floating labels from the drei library threw errors with React 19, so I wrote my own label system that positions plain HTML over the 3D scene every frame.",        ],
+      },
+    ],
+    gallery: [
+      { src: "img/neighbor/landing.jpg", caption: "Landing page: a campus placed in Wilmington with its noise zone" },
+      { src: "img/neighbor/map.jpg", caption: "Wilmington, Ohio built from real map data" },
+      { src: "img/neighbor/onboarding.jpg", caption: "Simulator intro" },
+      { src: "img/neighbor/modules.jpg", caption: "Lesson map for students" },
+      { src: "img/neighbor/guides.jpg", caption: "Students pick a guide character" },
+      { src: "img/neighbor/grades.jpg", caption: "Lessons adjust to four grade levels" },
     ],
   },
 
