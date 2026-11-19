@@ -142,12 +142,67 @@ const PROJECTS = [
     ],
     gallery: [
       { src: "img/atlas/cover.jpg", caption: "Finished build, powered on" },
-      { src: "img/atlas/side-lit.jpg", caption: "Side profile" },
-      { src: "img/atlas/top-outdoor.jpg", caption: "Top view: GPS module, 4S battery, and power wiring" },
       { src: "img/atlas/side-stack.jpg", caption: "Flight controller and ESC stack between the frame plates, Emax 2207 motors" },
-      { src: "img/atlas/top-lit.jpg", caption: "Top view with carbon-fiber arms" },
+      { src: "img/atlas/top-outdoor.jpg", caption: "Top view: GPS module, 4S battery, and power wiring" },
+      { src: "img/atlas/frame-v1.jpg", caption: "Center frame V1 in Onshape: two plates with sockets for the carbon-fiber arms" },
+      { src: "img/atlas/frame-v2.jpg", caption: "Center frame V2 in Onshape: redesigned with cutouts and more mounting holes" },
+      { src: "img/atlas/motor-mount.jpg", caption: "Motor mount in Onshape: clamps onto the end of each arm" },
+      { src: "img/atlas/camera-mount.jpg", caption: "Camera mount in Onshape" },
       { src: "img/atlas/early-build.jpg", caption: "Earlier version of the build" },
-      // Add a flight photo or CAD screenshot here when you have one
+      { src: "img/atlas/side-lit.jpg", caption: "Side profile" },
+    ],
+  },
+
+  /* ------------------------------------------------------------------ */
+  {
+    id: "air-motor",
+    title: "Six-Cylinder Air Motor",
+    subtitle: "Machine shop project · Ohio State",
+    tagline: "Machining the parts for a six-cylinder air motor by hand on a mill, lathe, and drill press.",
+    status: "Machining · In progress",
+    dates: "Fall 2026",
+    role: "Solo · machining and measurement",
+    tags: ["Manual mill", "Lathe", "Drill press", "Micrometers", "Tapping"],
+    cover: "img/air-motor/block-front.jpg",
+    video: "", // add the run test video here in December
+    links: [],
+    stats: [
+      { value: "6", label: "cylinders" },
+      { value: "±0.001 in", label: "tolerance on mating parts" },
+      { value: "3", label: "machines: mill, lathe, drill press" },
+    ],
+    sections: [
+      {
+        heading: "Overview",
+        text: [
+          "I'm building a six-cylinder air motor by machining every part myself from metal stock. Once all the parts are done, the motor gets assembled and run on compressed air at the end of the term.",
+        ],
+      },
+      {
+        heading: "Making the parts",
+        text: [
+          "Each part starts as raw aluminum or brass. I square and face the stock on the mill, bore and drill the holes, tap the threaded holes, and turn the round parts on the lathe.",
+        ],
+      },
+      {
+        heading: "Holding tolerance",
+        text: [
+          "The parts have to fit together and move, so the mating features have to be within a thousandth of an inch. I measure with micrometers between passes and adjust each cut, instead of cutting to the line and hoping it fits.",
+        ],
+      },
+      {
+        heading: "Status",
+        text: [
+          "Parts are being machined now. The motor gets assembled and run-tested in December, and I'll add the video here when it runs.",
+        ],
+      },
+    ],
+    gallery: [
+      { src: "img/air-motor/block-front.jpg", caption: "Aluminum block: center bore with a tapped four-hole bolt pattern" },
+      { src: "img/air-motor/engraved-block.jpg", caption: "Engraved and painted aluminum block" },
+      { src: "img/air-motor/plate.jpg", caption: "Aluminum plate with a drilled hole pattern" },
+      { src: "img/air-motor/brass-part.jpg", caption: "Brass part with a milled slot" },
+      { src: "img/air-motor/link.jpg", caption: "Aluminum link with a hole at each end" },
     ],
   },
 
@@ -302,7 +357,7 @@ const PROJECTS = [
     dates: "Jan 2026 - May 2026",
     role: "Design lead · 4-person team",
     tags: ["Onshape", "Pugh matrix", "3D printing", "Prototyping"],
-    cover: "cadcart.png",
+    cover: "img/construction-cart/prototype-loaded.jpg",
     video: "",
     links: [],
     stats: [
@@ -336,7 +391,11 @@ const PROJECTS = [
         ],
       },
     ],
-    gallery: [{ src: "cadcart.png", caption: "Scale prototype" }],
+    gallery: [
+      { src: "img/construction-cart/prototype-loaded.jpg", caption: "Scale prototype carrying weight plates during testing" },
+      { src: "img/construction-cart/wheels-axles.jpg", caption: "3D-printed wheels and axles before assembly" },
+      { src: "cadcart.png", caption: "Full cart in Onshape" },
+    ],
   },
 
   /* ------------------------------------------------------------------ */
